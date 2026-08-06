@@ -1,0 +1,27 @@
+# Business planning documents (not code)
+*.pdf
+*.docx
+
+# Backend (Django/Python)
+backend/venv/
+backend/**/__pycache__/
+backend/**/*.pyc
+backend/db.sqlite3
+backend/media/
+backend/staticfiles/
+backend/.env
+
+# Frontend (Next.js)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.env.local
+frontend/npm-debug.log*
+frontend/.turbo/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
