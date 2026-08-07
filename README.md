@@ -7,7 +7,7 @@ scan (no login required); hotels get their own restaurant-level Trust Badge.
 ## Stack
 
 - **Backend**: Django 5 + Django REST Framework, JWT auth (`djangorestframework-simplejwt`),
-  PostgreSQL (SQLite fallback), QR generation (`qrcode`), EXIF geo-tag parsing (`piexif`).
+  PostgreSQL (SQLite fallback), QR generation (`qrcode`), EXIF geo-tag parsing (`piexif`).   
 - **Frontend**: Next.js 16 (App Router) + TypeScript + Tailwind CSS v4.
 
 ## Running locally
