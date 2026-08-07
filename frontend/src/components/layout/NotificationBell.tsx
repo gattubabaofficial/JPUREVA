@@ -37,7 +37,7 @@ export function NotificationBell() {
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen((o) => !o)}
-        className="relative rounded-full p-2 text-foreground/70 hover:bg-surface-muted"
+        className="relative rounded-full p-2 text-foreground-secondary transition-colors duration-150 hover:bg-surface-2 hover:text-foreground"
         aria-label="Notifications"
       >
         <Bell size={20} />
@@ -48,8 +48,8 @@ export function NotificationBell() {
         )}
       </button>
       {open && (
-        <div className="absolute right-0 z-20 mt-2 w-80 rounded-xl border border-border bg-surface shadow-lg">
-          <div className="flex items-center justify-between border-b border-border px-4 py-3">
+        <div className="glass-panel absolute right-0 z-20 mt-2 w-80 rounded-2xl shadow-lifted">
+          <div className="flex items-center justify-between border-b border-border-strong px-4 py-3">
             <span className="text-sm font-semibold">Notifications</span>
             <button
               onClick={() => {
@@ -61,7 +61,7 @@ export function NotificationBell() {
             </button>
           </div>
           <div className="max-h-80 overflow-y-auto">
-            {items.length === 0 && <div className="p-4 text-sm text-foreground/50">No notifications yet.</div>}
+            {items.length === 0 && <div className="p-4 text-sm text-foreground-tertiary">No notifications yet.</div>}
             {items.map((n) => (
               <button
                 key={n.id}
@@ -69,13 +69,13 @@ export function NotificationBell() {
                   if (!n.is_read) markNotificationRead(n.id).then(load);
                 }}
                 className={cn(
-                  "block w-full border-b border-border px-4 py-3 text-left text-sm last:border-0 hover:bg-surface-muted",
-                  !n.is_read && "bg-primary/5"
+                  "block w-full border-b border-border px-4 py-3 text-left text-sm last:border-0 transition-colors duration-150 hover:bg-surface-2",
+                  !n.is_read && "bg-primary/10"
                 )}
               >
                 <div className="font-medium">{n.title}</div>
-                {n.body && <div className="mt-0.5 text-xs text-foreground/60">{n.body}</div>}
-                <div className="mt-1 text-[11px] text-foreground/40">{new Date(n.created_at).toLocaleString()}</div>
+                {n.body && <div className="mt-0.5 text-xs text-foreground-secondary">{n.body}</div>}
+                <div className="mt-1 text-[11px] text-foreground-tertiary">{new Date(n.created_at).toLocaleString()}</div>
               </button>
             ))}
           </div>
