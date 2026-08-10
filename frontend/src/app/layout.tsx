@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Outfit, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/lib/auth/AuthContext";
 
-const inter = Inter({
-  variable: "--font-inter",
+const outfit = Outfit({
+  variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "JPureva — Farm to Kitchen, Verified",
-  description: "Trust-as-a-Service: verified, lab-tested, traceable ingredients from farm to kitchen.",
+  title: "JPureva — Monetizing Food Trust | 100% Pure Raw B2B Sourcing",
+  description: "Trust-as-a-Service: verified, lab-tested, traceable raw food materials from farm to hotel kitchen.",
 };
 
 export default function RootLayout({
@@ -24,8 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+    <html lang="en" className={`${outfit.variable} ${playfair.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-emerald-500/30 selection:text-emerald-200">
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
