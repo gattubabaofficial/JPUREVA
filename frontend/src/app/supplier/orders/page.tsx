@@ -21,7 +21,7 @@ export default function SupplierOrdersPage() {
       <h1 className="font-heading text-2xl text-foreground">Incoming orders</h1>
 
       {items.length === 0 ? (
-        <p className="text-sm text-foreground/50">No orders yet.</p>
+        <p className="text-sm text-foreground-secondary">No orders yet.</p>
       ) : (
         <div className="space-y-3">
           {items.map((item) => (
@@ -29,7 +29,7 @@ export default function SupplierOrdersPage() {
               <CardBody className="flex items-center justify-between">
                 <div>
                   <div className="font-medium">{item.ingredient_name} × {item.quantity}</div>
-                  <div className="text-xs text-foreground/50">
+                  <div className="text-xs text-foreground-secondary">
                     Order #{item.order_id} · {item.hotel_name} · Deliver {item.delivery_date}
                   </div>
                 </div>

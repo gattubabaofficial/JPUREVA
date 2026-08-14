@@ -15,14 +15,14 @@ export default function HotelOrdersPage() {
     listHotelOrders().then((res) => setOrders(res.results)).finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="text-sm text-foreground/50">Loading orders…</p>;
+  if (loading) return <p className="text-sm text-foreground-secondary">Loading orders…</p>;
 
   return (
     <div className="space-y-6">
       <h1 className="font-heading text-2xl text-foreground">Orders</h1>
 
       {orders.length === 0 ? (
-        <p className="text-sm text-foreground/50">No orders placed yet.</p>
+        <p className="text-sm text-foreground-secondary">No orders placed yet.</p>
       ) : (
         <div className="space-y-3">
           {orders.map((o) => (
@@ -30,7 +30,7 @@ export default function HotelOrdersPage() {
               <CardBody className="flex items-center justify-between">
                 <div>
                   <div className="font-medium">Order #{o.id} · {o.items.length} items</div>
-                  <div className="text-xs text-foreground/50">
+                  <div className="text-xs text-foreground-secondary">
                     Delivery {o.delivery_date} · ₹{o.total_amount} · Placed {new Date(o.placed_at).toLocaleDateString()}
                   </div>
                 </div>

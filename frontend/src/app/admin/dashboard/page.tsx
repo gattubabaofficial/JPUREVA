@@ -21,7 +21,7 @@ export default function AdminDashboardPage() {
     <div className="space-y-6">
       <div>
         <h1 className="font-heading text-2xl text-foreground">Platform overview</h1>
-        <p className="text-sm text-foreground/60">Approve new partners and monitor platform activity.</p>
+        <p className="text-sm text-foreground-secondary">Approve new partners and monitor platform activity.</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-4">
@@ -41,12 +41,12 @@ export default function AdminDashboardPage() {
           <Button href="/admin/approvals" variant="ghost" size="sm">View all</Button>
         </CardHeader>
         <CardBody className="space-y-3">
-          {pending.length === 0 && <p className="text-sm text-foreground/50">No pending approvals.</p>}
+          {pending.length === 0 && <p className="text-sm text-foreground-secondary">No pending approvals.</p>}
           {pending.slice(0, 5).map((u) => (
             <div key={u.id} className="flex items-center justify-between border-b border-border pb-3 last:border-0 last:pb-0">
               <div>
                 <div className="text-sm font-medium">{u.email}</div>
-                <div className="text-xs text-foreground/50">{u.role}</div>
+                <div className="text-xs text-foreground-secondary">{u.role}</div>
               </div>
             </div>
           ))}

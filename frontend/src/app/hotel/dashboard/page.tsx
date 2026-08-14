@@ -29,7 +29,7 @@ export default function HotelDashboardPage() {
     <div className="space-y-6">
       <div>
         <h1 className="font-heading text-2xl text-foreground">Dashboard</h1>
-        <p className="text-sm text-foreground/60">Browse verified ingredients and track your orders.</p>
+        <p className="text-sm text-foreground-secondary">Browse verified ingredients and track your orders.</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-3">
@@ -44,12 +44,12 @@ export default function HotelDashboardPage() {
           <Button href="/hotel/orders" variant="ghost" size="sm">View all</Button>
         </CardHeader>
         <CardBody className="space-y-3">
-          {orders.length === 0 && <p className="text-sm text-foreground/50">No orders yet — start browsing verified ingredients.</p>}
+          {orders.length === 0 && <p className="text-sm text-foreground-secondary">No orders yet — start browsing verified ingredients.</p>}
           {orders.slice(0, 5).map((o) => (
             <div key={o.id} className="flex items-center justify-between border-b border-border pb-3 last:border-0 last:pb-0">
               <div>
                 <div className="text-sm font-medium">Order #{o.id}</div>
-                <div className="text-xs text-foreground/50">{o.items.length} items · ₹{o.total_amount}</div>
+                <div className="text-xs text-foreground-secondary">{o.items.length} items · ₹{o.total_amount}</div>
               </div>
               <StatusBadge status={o.status} />
             </div>

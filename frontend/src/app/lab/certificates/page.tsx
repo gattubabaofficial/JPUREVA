@@ -19,9 +19,9 @@ export default function LabCertificatesPage() {
       <h1 className="font-heading text-2xl text-foreground">Certificates issued</h1>
 
       {loading ? (
-        <p className="text-sm text-foreground/50">Loading…</p>
+        <p className="text-sm text-foreground-secondary">Loading…</p>
       ) : certs.length === 0 ? (
-        <p className="text-sm text-foreground/50">No certificates issued yet.</p>
+        <p className="text-sm text-foreground-secondary">No certificates issued yet.</p>
       ) : (
         <div className="space-y-3">
           {certs.map((c) => (
@@ -29,8 +29,8 @@ export default function LabCertificatesPage() {
               <CardBody className="flex items-center justify-between">
                 <div>
                   <div className="font-medium">{c.certificate_number}</div>
-                  <div className="text-xs text-foreground/50">{c.ingredient_name} · Batch {c.batch_public_id}</div>
-                  <div className="mt-1 truncate text-[11px] text-foreground/40" title={c.integrity_hash}>Hash: {c.integrity_hash}</div>
+                  <div className="text-xs text-foreground-secondary">{c.ingredient_name} · Batch {c.batch_public_id}</div>
+                  <div className="mt-1 truncate text-[11px] text-foreground-tertiary" title={c.integrity_hash}>Hash: {c.integrity_hash}</div>
                 </div>
                 <StatusBadge status={c.overall_result} />
               </CardBody>

@@ -22,7 +22,7 @@ export default function ProductDetailPage() {
     getProduct(batchId).then(setProduct);
   }, [batchId]);
 
-  if (!product) return <p className="text-sm text-foreground/50">Loading…</p>;
+  if (!product) return <p className="text-sm text-foreground-secondary">Loading…</p>;
 
   async function handleAdd() {
     setAdding(true);
@@ -42,7 +42,7 @@ export default function ProductDetailPage() {
           <div className="flex items-start justify-between">
             <div>
               <h1 className="font-heading text-2xl text-foreground">{product.ingredient_name}</h1>
-              <p className="text-sm text-foreground/60">Supplier: {product.supplier_name}</p>
+              <p className="text-sm text-foreground-secondary">Supplier: {product.supplier_name}</p>
             </div>
             {product.qr_image && (
               // eslint-disable-next-line @next/next/no-img-element
@@ -52,15 +52,15 @@ export default function ProductDetailPage() {
 
           <div className="grid grid-cols-2 gap-4 text-sm sm:grid-cols-4">
             <div>
-              <div className="text-foreground/50">Price</div>
+              <div className="text-foreground-secondary">Price</div>
               <div className="font-semibold">₹{product.price_per_unit}/{product.unit}</div>
             </div>
             <div>
-              <div className="text-foreground/50">Available</div>
+              <div className="text-foreground-secondary">Available</div>
               <div className="font-semibold">{product.available_quantity} {product.unit}</div>
             </div>
             <div>
-              <div className="text-foreground/50">Harvest date</div>
+              <div className="text-foreground-secondary">Harvest date</div>
               <div className="font-semibold">{product.harvest_date}</div>
             </div>
             <div className="flex items-center gap-1 text-primary">
@@ -72,13 +72,13 @@ export default function ProductDetailPage() {
             <Leaf className="text-primary" size={18} />
             <div>
               <div className="font-medium">FPO origin verified</div>
-              <div className="text-foreground/60">Traceable via geo-tagged harvest photos and NABL lab certificate.</div>
+              <div className="text-foreground-secondary">Traceable via geo-tagged harvest photos and NABL lab certificate.</div>
             </div>
           </div>
 
           <div className="flex items-end gap-3">
             <div className="w-24">
-              <label className="mb-1 block text-xs text-foreground/60">Quantity</label>
+              <label className="mb-1 block text-xs text-foreground-secondary">Quantity</label>
               <Input type="number" min={1} value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} />
             </div>
             <Button onClick={handleAdd} loading={adding}>Add to cart</Button>

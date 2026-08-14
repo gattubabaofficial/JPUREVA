@@ -25,7 +25,7 @@ export default function SubscriptionPage() {
   return (
     <div className="space-y-6">
       <h1 className="font-heading text-2xl text-foreground">Subscription</h1>
-      <p className="text-sm text-foreground/60">Choose the plan that fits your kitchen&apos;s ordering volume.</p>
+      <p className="text-sm text-foreground-secondary">Choose the plan that fits your kitchen&apos;s ordering volume.</p>
 
       <div className="grid gap-4 sm:grid-cols-3">
         {plans.map((p) => {
@@ -34,9 +34,9 @@ export default function SubscriptionPage() {
             <Card key={p.id} className={cn(isCurrent && "ring-2 ring-primary")}>
               <CardBody>
                 <div className="font-heading text-lg text-foreground">{p.name}</div>
-                <div className="mt-2 text-2xl font-semibold">₹{p.price_monthly}<span className="text-sm font-normal text-foreground/50">/mo</span></div>
-                <div className="text-xs text-foreground/50">or ₹{p.price_annual}/year</div>
-                <ul className="mt-4 space-y-2 text-sm text-foreground/70">
+                <div className="mt-2 text-2xl font-semibold">₹{p.price_monthly}<span className="text-sm font-normal text-foreground-secondary">/mo</span></div>
+                <div className="text-xs text-foreground-secondary">or ₹{p.price_annual}/year</div>
+                <ul className="mt-4 space-y-2 text-sm text-foreground-secondary">
                   {Object.entries(p.features).map(([k, v]) => (
                     <li key={k} className="flex items-center gap-2">
                       <Check size={14} className="text-success" />

@@ -18,11 +18,11 @@ export default function AdminAuditLogPage() {
 
       <Card>
         <CardBody className="space-y-3">
-          {entries.length === 0 && <p className="text-sm text-foreground/50">No audit events recorded yet.</p>}
+          {entries.length === 0 && <p className="text-sm text-foreground-secondary">No audit events recorded yet.</p>}
           {entries.map((e) => (
             <div key={e.id} className="border-b border-border pb-3 text-sm last:border-0 last:pb-0">
               <div className="font-medium">{e.action.replace(/_/g, " ")}</div>
-              <div className="text-xs text-foreground/50">
+              <div className="text-xs text-foreground-secondary">
                 {e.actor_email ?? "system"} · {e.target_type} #{e.target_id} · {new Date(e.created_at).toLocaleString()}
               </div>
             </div>

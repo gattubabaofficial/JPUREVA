@@ -16,7 +16,7 @@ export default function HotelOrderDetailPage() {
     getHotelOrder(Number(orderId)).then(setOrder);
   }, [orderId]);
 
-  if (!order) return <p className="text-sm text-foreground/50">Loading order…</p>;
+  if (!order) return <p className="text-sm text-foreground-secondary">Loading order…</p>;
 
   return (
     <div className="max-w-2xl space-y-6">
@@ -39,8 +39,8 @@ export default function HotelOrderDetailPage() {
                 </div>
                 <div className="pb-4">
                   <div className="text-sm font-medium">{ev.status.replace(/_/g, " ")}</div>
-                  <div className="text-xs text-foreground/50">{new Date(ev.created_at).toLocaleString()}</div>
-                  {ev.note && <div className="text-xs text-foreground/60">{ev.note}</div>}
+                  <div className="text-xs text-foreground-secondary">{new Date(ev.created_at).toLocaleString()}</div>
+                  {ev.note && <div className="text-xs text-foreground-secondary">{ev.note}</div>}
                 </div>
               </div>
             ))}
@@ -55,7 +55,7 @@ export default function HotelOrderDetailPage() {
             <div key={item.id} className="flex items-center justify-between border-b border-border pb-3 last:border-0 last:pb-0">
               <div>
                 <div className="text-sm font-medium">{item.ingredient_name}</div>
-                <div className="text-xs text-foreground/50">{item.supplier_name} · {item.quantity} units</div>
+                <div className="text-xs text-foreground-secondary">{item.supplier_name} · {item.quantity} units</div>
               </div>
               <div className="text-right">
                 <div className="text-sm font-medium">₹{item.subtotal}</div>
@@ -67,7 +67,7 @@ export default function HotelOrderDetailPage() {
       </Card>
 
       <Card>
-        <CardBody className="text-sm text-foreground/70">
+        <CardBody className="text-sm text-foreground-secondary">
           <div>Delivery address: {order.delivery_address}</div>
           <div>Delivery date: {order.delivery_date} ({order.delivery_slot})</div>
           <div className="mt-2 font-semibold text-foreground">Total: ₹{order.total_amount}</div>

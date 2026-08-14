@@ -1,0 +1,245 @@
+
+JPureva Competitive Analysis Matrix
+One company per row, compared across the same feature columns
+Legend: ✓ = core/yes, P = partial, - = not public or no
+Company
+Stage
+Primary focus
+Farmers
+FPO
+Warehouse
+Cold chain
+Logistics
+Processors
+Restaurants
+Consumer app
+AI
+IoT
+Blockchain
+Traceability
+Compliance
+QR
+NABL
+ERP/API
+Major takeaway
+JPureva
+Planned
+AI + IoT + Blockchain digital food safety ecosystem
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+End-to-end
+FSSAI + recall
+✓
+✓
+✓
+Benchmark row. Full-stack operating system across the food ecosystem.
+Ninjacart
+Established
+Agri-commerce and fresh produce supply chain
+✓
+P
+✓
+✓
+✓
+✓
+✓
+-
+✓
+P
+-
+Partial
+-
+-
+-
+P
+Strong scale in commerce, finance, fulfilment, and logistics.
+WayCool
+Established
+Agri-food supply chain and B2B commerce
+✓
+P
+✓
+✓
+✓
+✓
+✓
+-
+✓
+✓
+-
+Partial
+-
+-
+-
+P
+Strong procurement and distribution platform.
+FarmERP
+Established
+Enterprise agribusiness ERP and farm management
+✓
+✓
+✓
+✓
+✓
+✓
+-
+-
+✓
+✓
+✓
+Farm-to-fork
+Partial
+✓
+-
+✓
+Strong ERP and contract farming presence.
+AgNext
+Established
+AI food quality and diagnostics
+✓
+✓
+✓
+P
+P
+✓
+P
+-
+✓
+✓
+P
+✓
+Partial
+P
+P
+✓
+Very strong in inspection, assurance, and diagnostics.
+Cropin
+Established
+AI agriculture intelligence platform
+✓
+P
+✓
+P
+P
+✓
+-
+-
+✓
+✓
+-
+Farm-to-fork
+-
+✓
+-
+✓
+Strong in forecasting, farm intelligence, and traceability.
+Hyperpure
+Established
+B2B food procurement and restaurant supply
+P
+-
+✓
+✓
+✓
+P
+✓
+-
+P
+-
+-
+Partial
+-
+-
+-
+-
+Excellent restaurant supply business with warehousing and logistics.
+FarMart
+Established
+B2B food sourcing and supply-chain platform
+✓
+P
+✓
+P
+✓
+✓
+✓
+P
+✓
+-
+-
+Market-to-factory
+Limited
+P
+P
+✓
+Relevant in sourcing and traceability.
+Stellapps
+Established
+Dairy technology platform
+✓
+-
+P
+✓
+P
+✓
+-
+P
+✓
+✓
+-
+Dairy traceability
+-
+P
+-
+P
+Strong IoT-led dairy procurement and cold-chain stack.
+Arya.ag
+Established
+Post-harvest agritech, warehousing, and finance
+✓
+✓
+✓
+P
+P
+✓
+-
+-
+✓
+P
+-
+Partial
+-
+-
+P
+P
+Powerful warehousing and commodity finance model.
+DeHaat
+Established
+Full-stack agritech platform
+✓
+✓
+P
+P
+P
+P
+-
+-
+✓
+P
+-
+Partial
+-
+-
+-
+P
+Strong farmer enablement, inputs, advisory, and market linkage.
+Investor note: This matrix highlights that JPureva is positioned as a wider operating system for food safety, compliance, traceability, and stakeholder coordination, while most competitors are stronger in one narrower layer of the chain.

@@ -34,7 +34,7 @@ export default function AdminUsersPage() {
             <div key={u.id} className="flex items-center justify-between border-b border-border pb-3 last:border-0 last:pb-0">
               <div>
                 <div className="text-sm font-medium">{u.email}</div>
-                <div className="text-xs text-foreground/50">{u.role} · Joined {new Date(u.date_joined).toLocaleDateString()}</div>
+                <div className="text-xs text-foreground-secondary">{u.role} · Joined {new Date(u.date_joined).toLocaleDateString()}</div>
               </div>
               <StatusBadge status={u.approval_status} />
             </div>

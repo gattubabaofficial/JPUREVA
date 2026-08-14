@@ -41,18 +41,18 @@ export default function CompliancePage() {
   return (
     <div className="max-w-2xl space-y-6">
       <h1 className="font-heading text-2xl text-foreground">Compliance documents</h1>
-      <p className="text-sm text-foreground/60">Keep your FSSAI license and audit reports up to date to avoid expiry alerts.</p>
+      <p className="text-sm text-foreground-secondary">Keep your FSSAI license and audit reports up to date to avoid expiry alerts.</p>
 
       <Card>
         <CardBody className="space-y-3">
-          {docs.length === 0 && <p className="text-sm text-foreground/50">No documents uploaded yet.</p>}
+          {docs.length === 0 && <p className="text-sm text-foreground-secondary">No documents uploaded yet.</p>}
           {docs.map((d) => (
             <div key={d.id} className="flex items-center justify-between border-b border-border pb-3 last:border-0 last:pb-0">
               <div className="flex items-center gap-2">
                 <FileCheck2 size={16} className="text-primary" />
                 <div>
                   <div className="text-sm font-medium">{d.doc_type.replace(/_/g, " ")}</div>
-                  <div className="text-xs text-foreground/50">Expires {d.expiry_date ?? "—"}</div>
+                  <div className="text-xs text-foreground-secondary">Expires {d.expiry_date ?? "—"}</div>
                 </div>
               </div>
               <StatusBadge status={d.status} />

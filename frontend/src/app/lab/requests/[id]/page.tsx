@@ -31,7 +31,7 @@ export default function LabRequestDetailPage() {
 
   useEffect(load, [id]);
 
-  if (!request) return <p className="text-sm text-foreground/50">Loading request…</p>;
+  if (!request) return <p className="text-sm text-foreground-secondary">Loading request…</p>;
 
   const alreadyCompleted = request.status === "COMPLETED";
 
@@ -67,20 +67,20 @@ export default function LabRequestDetailPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="font-heading text-2xl text-foreground">{request.ingredient_name}</h1>
-          <p className="text-sm text-foreground/60">Batch {request.batch_public_id} · Supplier {request.supplier_name}</p>
+          <p className="text-sm text-foreground-secondary">Batch {request.batch_public_id} · Supplier {request.supplier_name}</p>
         </div>
         <StatusBadge status={request.status} />
       </div>
 
       {request.status === "REQUESTED" && (
         <Card><CardBody className="flex items-center justify-between">
-          <p className="text-sm text-foreground/70">Claim this request to begin testing.</p>
+          <p className="text-sm text-foreground-secondary">Claim this request to begin testing.</p>
           <Button onClick={handleClaim}>Claim request</Button>
         </CardBody></Card>
       )}
 
       {alreadyCompleted ? (
-        <Card><CardBody><p className="text-sm text-foreground/60">This request has already been certified. See the Certificates tab for details.</p></CardBody></Card>
+        <Card><CardBody><p className="text-sm text-foreground-secondary">This request has already been certified. See the Certificates tab for details.</p></CardBody></Card>
       ) : (
         <Card>
           <CardHeader><CardTitle>Issue certificate</CardTitle></CardHeader>

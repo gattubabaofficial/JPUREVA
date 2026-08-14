@@ -24,9 +24,9 @@ export default function SupplierBatchesPage() {
       </div>
 
       {loading ? (
-        <p className="text-sm text-foreground/50">Loading…</p>
+        <p className="text-sm text-foreground-secondary">Loading…</p>
       ) : batches.length === 0 ? (
-        <p className="text-sm text-foreground/50">No batches yet. Create your first harvest batch.</p>
+        <p className="text-sm text-foreground-secondary">No batches yet. Create your first harvest batch.</p>
       ) : (
         <div className="space-y-3">
           {batches.map((b) => (
@@ -37,7 +37,7 @@ export default function SupplierBatchesPage() {
                     {b.ingredient_name}
                     {b.is_growth_anomaly && <AlertTriangle size={14} className="text-danger" aria-label="Growth anomaly flagged" />}
                   </div>
-                  <div className="text-xs text-foreground/50">Batch {b.public_id} · {b.quantity} {b.unit}</div>
+                  <div className="text-xs text-foreground-secondary">Batch {b.public_id} · {b.quantity} {b.unit}</div>
                 </div>
                 <div className="flex items-center gap-3">
                   <StatusBadge status={b.status} />

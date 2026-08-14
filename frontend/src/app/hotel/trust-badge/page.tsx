@@ -16,14 +16,14 @@ export default function TrustBadgePage() {
     getTrustBadge().then(setBadge).finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="text-sm text-foreground/50">Loading trust badge…</p>;
+  if (loading) return <p className="text-sm text-foreground-secondary">Loading trust badge…</p>;
 
   const publicUrl = badge ? `${window.location.origin}/trust/${badge.public_slug}` : "";
 
   return (
     <div className="max-w-lg space-y-6">
       <h1 className="font-heading text-2xl text-foreground">Trust Badge</h1>
-      <p className="text-sm text-foreground/60">
+      <p className="text-sm text-foreground-secondary">
         Display this QR code at your restaurant so diners can verify your JPureva-sourced supply chain.
       </p>
 
@@ -33,11 +33,11 @@ export default function TrustBadgePage() {
             // eslint-disable-next-line @next/next/no-img-element
             <img src={mediaUrl(badge.qr_image) ?? undefined} alt="Trust badge QR" className="h-48 w-48" />
           ) : (
-            <div className="flex h-48 w-48 items-center justify-center rounded-xl border-2 border-dashed border-border text-sm text-foreground/40">
+            <div className="flex h-48 w-48 items-center justify-center rounded-xl border-2 border-dashed border-border text-sm text-foreground-tertiary">
               No QR yet
             </div>
           )}
-          <div className="text-sm text-foreground/60">{publicUrl}</div>
+          <div className="text-sm text-foreground-secondary">{publicUrl}</div>
           <Button
             variant="outline"
             loading={regenerating}

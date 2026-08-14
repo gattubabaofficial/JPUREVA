@@ -32,7 +32,7 @@ export default function AdminApprovalsPage() {
       <h1 className="font-heading text-2xl text-foreground">Pending approvals</h1>
 
       {pending.length === 0 ? (
-        <p className="text-sm text-foreground/50">No pending supplier or lab applications.</p>
+        <p className="text-sm text-foreground-secondary">No pending supplier or lab applications.</p>
       ) : (
         <div className="space-y-3">
           {pending.map((u) => (
@@ -40,7 +40,7 @@ export default function AdminApprovalsPage() {
               <CardBody className="flex items-center justify-between">
                 <div>
                   <div className="font-medium">{u.email}</div>
-                  <div className="text-xs text-foreground/50">{u.role} · Applied {new Date(u.date_joined).toLocaleDateString()}</div>
+                  <div className="text-xs text-foreground-secondary">{u.role} · Applied {new Date(u.date_joined).toLocaleDateString()}</div>
                 </div>
                 <div className="flex gap-2">
                   <Button size="sm" variant="outline" loading={acting === u.id} onClick={() => handle("reject", u.id)}>Reject</Button>

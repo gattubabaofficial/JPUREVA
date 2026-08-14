@@ -33,7 +33,7 @@ export default function SupplierBatchDetailPage() {
 
   useEffect(load, [id]);
 
-  if (!batch) return <p className="text-sm text-foreground/50">Loading batch…</p>;
+  if (!batch) return <p className="text-sm text-foreground-secondary">Loading batch…</p>;
 
   async function handlePhotoUpload() {
     if (!photoFile) return;
@@ -77,7 +77,7 @@ export default function SupplierBatchDetailPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="font-heading text-2xl text-foreground">{batch.ingredient_name}</h1>
-          <p className="text-sm text-foreground/60">Batch {batch.public_id}</p>
+          <p className="text-sm text-foreground-secondary">Batch {batch.public_id}</p>
         </div>
         <StatusBadge status={batch.status} />
       </div>
@@ -90,9 +90,9 @@ export default function SupplierBatchDetailPage() {
 
       <Card>
         <CardBody className="grid grid-cols-2 gap-4 text-sm sm:grid-cols-3">
-          <div><div className="text-foreground/50">Quantity</div><div className="font-medium">{batch.quantity} {batch.unit}</div></div>
-          <div><div className="text-foreground/50">Sowing date</div><div className="font-medium">{batch.sowing_date ?? "—"}</div></div>
-          <div><div className="text-foreground/50">Harvest date</div><div className="font-medium">{batch.harvest_date}</div></div>
+          <div><div className="text-foreground-secondary">Quantity</div><div className="font-medium">{batch.quantity} {batch.unit}</div></div>
+          <div><div className="text-foreground-secondary">Sowing date</div><div className="font-medium">{batch.sowing_date ?? "—"}</div></div>
+          <div><div className="text-foreground-secondary">Harvest date</div><div className="font-medium">{batch.harvest_date}</div></div>
           {batch.qr_image && (
             <div className="col-span-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -108,7 +108,7 @@ export default function SupplierBatchDetailPage() {
         <Card>
           <CardHeader><CardTitle>Request lab verification</CardTitle></CardHeader>
           <CardBody>
-            <p className="mb-3 text-sm text-foreground/60">Submit this batch for NABL lab testing before listing it for sale.</p>
+            <p className="mb-3 text-sm text-foreground-secondary">Submit this batch for NABL lab testing before listing it for sale.</p>
             <Button onClick={handleRequestVerification} loading={requesting}>Request verification</Button>
           </CardBody>
         </Card>
@@ -135,7 +135,7 @@ export default function SupplierBatchDetailPage() {
               <div key={p.id} className="overflow-hidden rounded-lg border border-border">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={mediaUrl(p.image) ?? undefined} alt="Harvest" className="h-24 w-full object-cover" />
-                <div className="p-1.5 text-[10px] text-foreground/50">
+                <div className="p-1.5 text-[10px] text-foreground-secondary">
                   {p.exif_locked ? "EXIF-verified" : "Unverified location"}
                 </div>
               </div>

@@ -79,7 +79,7 @@ export default function SupplierColdChainPage() {
 
       <Card>
         <CardBody className="space-y-2">
-          {logs.length === 0 && <p className="text-sm text-foreground/50">No cold-chain logs yet.</p>}
+          {logs.length === 0 && <p className="text-sm text-foreground-secondary">No cold-chain logs yet.</p>}
           {logs.map((log) => (
             <div key={log.id} className="flex items-center justify-between border-b border-border pb-2 text-sm last:border-0">
               <span>{log.stage} · {log.location_name || "—"}</span>

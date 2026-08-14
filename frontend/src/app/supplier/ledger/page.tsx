@@ -29,12 +29,12 @@ export default function SupplierLedgerPage() {
 
       <Card>
         <CardBody className="space-y-3">
-          {entries.length === 0 && <p className="text-sm text-foreground/50">No ledger entries yet.</p>}
+          {entries.length === 0 && <p className="text-sm text-foreground-secondary">No ledger entries yet.</p>}
           {entries.map((e) => (
             <div key={e.id} className="flex items-center justify-between border-b border-border pb-3 last:border-0 last:pb-0">
               <div>
                 <div className="text-sm font-medium">{e.entry_type} · ₹{e.amount}</div>
-                <div className="text-xs text-foreground/50">{e.note} · {new Date(e.created_at).toLocaleDateString()}</div>
+                <div className="text-xs text-foreground-secondary">{e.note} · {new Date(e.created_at).toLocaleDateString()}</div>
               </div>
               <StatusBadge status={e.status} />
             </div>

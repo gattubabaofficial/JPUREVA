@@ -24,7 +24,7 @@ export default function LabDashboardPage() {
     <div className="space-y-6">
       <div>
         <h1 className="font-heading text-2xl text-foreground">Dashboard</h1>
-        <p className="text-sm text-foreground/60">Review incoming samples and issue verified certificates.</p>
+        <p className="text-sm text-foreground-secondary">Review incoming samples and issue verified certificates.</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-4">
@@ -40,12 +40,12 @@ export default function LabDashboardPage() {
           <Button href="/lab/requests" variant="ghost" size="sm">View all</Button>
         </CardHeader>
         <CardBody className="space-y-3">
-          {requests.length === 0 && <p className="text-sm text-foreground/50">No verification requests yet.</p>}
+          {requests.length === 0 && <p className="text-sm text-foreground-secondary">No verification requests yet.</p>}
           {requests.slice(0, 5).map((r) => (
             <div key={r.id} className="flex items-center justify-between border-b border-border pb-3 last:border-0 last:pb-0">
               <div>
                 <div className="text-sm font-medium">{r.ingredient_name} · {r.supplier_name}</div>
-                <div className="text-xs text-foreground/50">Batch {r.batch_public_id}</div>
+                <div className="text-xs text-foreground-secondary">Batch {r.batch_public_id}</div>
               </div>
               <div className="flex items-center gap-3">
                 <StatusBadge status={r.status} />
