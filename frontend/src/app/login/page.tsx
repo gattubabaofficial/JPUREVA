@@ -24,15 +24,12 @@ function LoginForm() {
     setLoading(true);
     try {
       const user = await login(email, password);
-      if ((user.role === "SUPPLIER" || user.role === "LAB") && user.approvalStatus !== "APPROVED") {
-        router.push("/pending-approval");
-        return;
-      }
       const next = searchParams.get("next");
       router.push(next || dashboardPathForRole(user.role));
     } catch (err) {
       if (err instanceof ApiError) {
-        setError("Invalid email or password.");
+        const detail = (err.data as { detail?: string } | null)?.detail;
+        setError(detail && detail !== "No active account found with the given credentials" ? detail : "Invalid email or password.");
       } else {
         setError("Something went wrong. Please try again.");
       }
@@ -67,15 +64,7 @@ function LoginForm() {
           <p className="mt-6 text-center text-sm text-foreground/60">
             New to JPureva?{" "}
             <Link href="/register/hotel" className="font-medium text-primary hover:underline">
-              Register as Hotel
-            </Link>
-            {" · "}
-            <Link href="/register/supplier" className="font-medium text-primary hover:underline">
-              Supplier
-            </Link>
-            {" · "}
-            <Link href="/register/lab" className="font-medium text-primary hover:underline">
-              Lab
+              Register your Hotel
             </Link>
           </p>
         </CardBody>

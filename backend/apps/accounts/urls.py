@@ -6,13 +6,12 @@ from .views import (
     LogoutView,
     MeView,
     RegisterHotelView,
-    RegisterLabView,
-    RegisterSupplierView,
 )
 
+# Supplier/lab self-registration is disabled for now (hotel-only signup).
+# The RegisterSupplierView/RegisterLabView classes remain in views.py, unrouted,
+# in case supplier/lab onboarding is reintroduced later.
 urlpatterns = [
-    path("register/supplier/", RegisterSupplierView.as_view(), name="register-supplier"),
-    path("register/lab/", RegisterLabView.as_view(), name="register-lab"),
     path("register/hotel/", RegisterHotelView.as_view(), name="register-hotel"),
     path("login/", CustomTokenObtainPairView.as_view(), name="login"),
     path("token/refresh/", TokenRefreshView.as_view(), name="token-refresh"),

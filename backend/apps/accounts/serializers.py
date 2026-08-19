@@ -1,8 +1,12 @@
 from django.db import transaction
 from rest_framework import serializers
+from rest_framework_simplejwt.exceptions import AuthenticationFailed
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 from .models import HotelProfile, LabProfile, SupplierProfile, User
+
+# Supplier/lab self-service is disabled for now; only hotels and platform admins log in.
+LOGIN_ALLOWED_ROLES = (User.Role.HOTEL, User.Role.ADMIN)
 
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
@@ -13,6 +17,12 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         token["approval_status"] = user.approval_status
         token["email"] = user.email
         return token
+
+    def validate(self, attrs):
+        data = super().validate(attrs)
+        if self.user.role not in LOGIN_ALLOWED_ROLES:
+            raise AuthenticationFailed("This account type isn't available right now.")
+        return data
 
 
 class RegisterSupplierSerializer(serializers.ModelSerializer):

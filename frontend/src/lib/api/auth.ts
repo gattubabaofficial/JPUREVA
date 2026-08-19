@@ -30,37 +30,6 @@ export interface RegisterHotelPayload {
   cuisine_type?: string;
 }
 
-export interface RegisterSupplierPayload {
-  email: string;
-  password: string;
-  phone?: string;
-  fpo_name: string;
-  registration_number?: string;
-  fssai_license_number: string;
-  address?: string;
-  state?: string;
-  district?: string;
-}
-
-export interface RegisterLabPayload {
-  email: string;
-  password: string;
-  phone?: string;
-  lab_name: string;
-  nabl_accreditation_number: string;
-  nabl_valid_till?: string;
-  address?: string;
-  contact_person?: string;
-}
-
 export function registerHotel(payload: RegisterHotelPayload) {
   return apiFetch("/auth/register/hotel/", { method: "POST", body: payload, auth: false });
-}
-
-export function registerSupplier(payload: RegisterSupplierPayload) {
-  return apiFetch("/auth/register/supplier/", { method: "POST", body: payload, auth: false });
-}
-
-export function registerLab(payload: RegisterLabPayload) {
-  return apiFetch("/auth/register/lab/", { method: "POST", body: payload, auth: false });
 }
