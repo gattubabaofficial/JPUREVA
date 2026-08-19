@@ -55,5 +55,5 @@ notifications, compliance documents, subscriptions, and the admin panel.
 
 Deliberate MVP simplifications (see plan for rationale): certificate "digital signature" is
 a SHA-256 integrity hash + signed stamp (not full PKI); cold-chain/IoT data is
-manually/API-logged, not ingested from real sensors; payouts are an internal ledger with no
+manually/API-logged, not ingested from real sensors; payouts are an internal ledger with no 
 live payment gateway; notifications are in-app only, no email/SMS delivery.
